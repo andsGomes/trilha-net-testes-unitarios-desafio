@@ -12,8 +12,8 @@ public class ValidacoesStringTests
         //TODO: Corrigir a variável "texto" e "resultadoEsperado" da seção Arrange
 
         // Arrange
-        var texto = "a";
-        var resultadoEsperado = 0;
+        var texto = "Matrix";
+        var resultadoEsperado = 6;
 
         // Act
         var resultado = _validacoes.RetornarQuantidadeCaracteres(texto);
@@ -31,41 +31,39 @@ public class ValidacoesStringTests
 
         //TODO: Corrigir a chamada do método "ContemCaractere" da seção Act
         // Act
-         _validacoes.ContemCaractere(texto, textoProcurado);
+         var textoRetornado = _validacoes.ContemCaractere(texto, textoProcurado);
 
         // Assert
         //TODO: Corrigir o Assert.True com base no retorno da chamada ao método
-        Assert.True(true);
+        Assert.True(textoRetornado);
     }
 
     [Fact]
-    public void NaoDeveConterAPalavraTesteNoTexto()
-    {
-        // Arrange
-        var texto = "Esse é um texto qualquer";
-        var textoProcurado = "teste";
-
-        // Act
-        var resultado = _validacoes.ContemCaractere(texto, textoProcurado);
-
-        // Assert
-        //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
-        Assert.False(true);
-    }
+     public void NaoDeveConterAPalavraTesteNoTexto()
+     {
+         // Arrange
+         var texto = "Esse é um texto qualquer";
+         var textoProcurado = "teste";
+         // Act
+         var resultado = _validacoes.ContemCaractere(texto, textoProcurado);
+         // Assert
+         //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
+         Assert.False(resultado);
+     }
 
     //TODO: Corrigir a anotação [Fact]
-    public void TextoDeveTerminarComAPalavraProcurado()
-    {
-        //TODO: Corrigir a variável "textoProcurado" seção Arrange
+    [Fact]
+     public void TextoDeveTerminarComAPalavraProcurado()
+     {
+         //TODO: Corrigir a variável "textoProcurado" seção Arrang
+         // Arrange
+         var texto = "Começo, meio e fim do texto procurado teste";
+         var textoProcurado = "teste";
 
-        // Arrange
-        var texto = "Começo, meio e fim do texto procurado";
-        var textoProcurado = "teste";
+         // Act
+         var resultado = _validacoes.TextoTerminaCom(texto, textoProcurado);
 
-        // Act
-        var resultado = _validacoes.TextoTerminaCom(texto, textoProcurado);
-
-        // Assert
-        Assert.True(resultado);
-    }
+         // Assert
+         Assert.True(resultado);
+     }
 }
